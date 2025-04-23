@@ -25,6 +25,52 @@ class ServiceController extends Controller
 
 
     
+//filteredhotel:
+public function filteredHotels()
+{
+    $services = Service::with(['city', 'category', 'admin'])
+        ->where('city_id', 1)
+        ->where('category_id', 1)
+        ->get();
+
+    return response()->json($services);
+}
+
+//filteredRestau:
+public function filteredRetau()
+{
+    $services = Service::with(['city', 'category', 'admin'])
+        ->where('city_id', 1)
+        ->where('category_id', 2)
+        ->get();
+
+    return response()->json($services);
+}
+//filteredCars:
+public function filteredCars()
+{
+    $services = Service::with(['city', 'category', 'admin'])
+        ->where('city_id', 1)
+        ->where('category_id', 3)
+        ->get();
+
+    return response()->json($services);
+}
+//filteredActivities:
+public function filteredActivities()
+{
+    $services = Service::with(['city', 'category', 'admin'])
+        ->where('city_id', 1)
+        ->where('category_id', 4)
+        ->get();
+
+    return response()->json($services);
+}
+
+
+
+
+    
     public function getAllPlaces()
     {
         $services = Service::with([ 'category', 'admin'])

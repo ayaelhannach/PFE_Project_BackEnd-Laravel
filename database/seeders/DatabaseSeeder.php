@@ -18,7 +18,8 @@ class DatabaseSeeder extends Seeder
         CategorySeeder::class,
         GuideSeeder::class,
         SubmissionSeeder::class,
-        ServiceSeeder::class
+        ServiceSeeder::class,
+        AdminSeeder::class
     ]);
     //\App\Models\Admin::factory(5)->create();
     //\App\Models\City::factory(5)->create();

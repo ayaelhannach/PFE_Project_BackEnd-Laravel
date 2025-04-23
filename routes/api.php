@@ -180,3 +180,14 @@ use App\Http\Controllers\ContactController;
 
 Route::post('/contact', [ContactController::class, 'send']);
 
+
+
+
+
+Route::get('/hotels/filtered', [ServiceController::class, 'filteredHotels']);
+Route::get('/Restaurants/filtered', [ServiceController::class, 'filteredRetau']);
+Route::get('/RentalCars/filtered', [ServiceController::class, 'filteredCars']);
+Route::get('/Activities/filtered', [ServiceController::class, 'filteredActivities']);
+
+
+

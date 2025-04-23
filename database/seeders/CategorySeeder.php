@@ -16,13 +16,13 @@ class CategorySeeder extends Seeder
         DB::table('categories')->insert([
             'name' => 'hotels',
             'description' => 'hotels category with different hotels around the world',
-            'image' => '/images/cities/m1.jpg',
+            'image' => '/images/cat/h5.jpeg',
         ]);
 
         DB::table('categories')->insert([
             'name' => 'restaurents',
             'description' => 'discover restaurents that offer delicius food with different hotels around the world',
-            'image' => '/images/cat/categorie1.jpg',
+            'image' => '/images/cat/restaurant17.jpg',
         ]);
 
         DB::table('categories')->insert([

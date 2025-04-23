@@ -6,28 +6,24 @@ use App\Models\Favorite;
 use Illuminate\Http\Request;
 
 class FavoriteController extends Controller
-
 {
+    public function index($utilisateur_id)
+    {
+        $favorites = Favorite::with('service') // Charge la relation service
+            ->where('utilisateur_id', $utilisateur_id)
+            ->get();
 
-    public function index($user_id)
-{
-    $favorites = Favorite::with('service') // relation avec Service
-        ->where('user_id', $user_id)
-        ->get();
-
-    return response()->json($favorites);
-}
-
-
+        return response()->json($favorites);
+    }
 
     public function store(Request $request)
     {
         $validated = $request->validate([
-            'user_id' => 'required|exists:users,id',
+            'utilisateur_id' => 'required|exists:users,id',
             'service_id' => 'required|exists:services,id',
         ]);
 
-        $exists = Favorite::where('user_id', $validated['user_id'])
+        $exists = Favorite::where('utilisateur_id', $validated['utilisateur_id'])
             ->where('service_id', $validated['service_id'])
             ->exists();
 
@@ -36,7 +32,6 @@ class FavoriteController extends Controller
         }
 
         Favorite::create($validated);
-
 
         return response()->json(['message' => 'Ajouté aux favoris !']);
     }
@@ -48,6 +43,4 @@ class FavoriteController extends Controller
 
         return response()->json(['message' => 'Favori supprimé avec succès.']);
     }
-
 }
-
