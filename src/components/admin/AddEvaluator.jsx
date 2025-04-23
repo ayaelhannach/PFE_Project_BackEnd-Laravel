@@ -546,7 +546,7 @@ const InputField = ({ label, name, value, onChange, type = "text", error }) => (
             type={type}
             className={`w-full py-4 px-5 mt-2 rounded-lg border-2 ${
                 error ? "border-red-500" : "border-[#e2e8f0]"
-            } focus:outline-none focus:ring-2 focus:ring-[#4a90e2] focus:border-[#4a90e2] placeholder-[#9ca3af] transition-all text-xl`}
+            } focus:outline-none focus:ring-2 focus:ring-[#4a90e2] focus:border-[#4a90e2] placeholder-[#9ca3af] transition-all text-xl text-black`}
         />
         {error && <span className="text-red-500 text-sm mt-2">{error[0]}</span>}
     </div>

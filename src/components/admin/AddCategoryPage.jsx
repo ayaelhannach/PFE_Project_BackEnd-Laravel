@@ -240,7 +240,7 @@ const InputField = ({ label, name, value, onChange, type = "text" }) => (
             value={value}
             onChange={onChange}
             type={type}
-            className="w-full py-4 px-5 mt-2 rounded-lg border-2 border-[#e2e8f0] focus:outline-none focus:ring-2 focus:ring-[#4a90e2] focus:border-[#4a90e2] placeholder-[#9ca3af] text-xl"
+            className="w-full py-4 px-5 mt-2 rounded-lg border-2 border-[#e2e8f0] focus:outline-none focus:ring-2 focus:ring-[#4a90e2] focus:border-[#4a90e2] placeholder-[#9ca3af] text-xl text-black"
         />
     </div>
 );
@@ -255,7 +255,7 @@ const TextareaField = ({ label, name, value, onChange }) => (
             name={name}
             value={value}
             onChange={onChange}
-            className="w-full py-4 px-5 mt-2 rounded-lg border-2 border-[#e2e8f0] focus:outline-none focus:ring-2 focus:ring-[#4a90e2] focus:border-[#4a90e2] placeholder-[#9ca3af] text-xl"
+            className="w-full py-4 px-5 mt-2 rounded-lg border-2 border-[#e2e8f0] focus:outline-none focus:ring-2 focus:ring-[#4a90e2] focus:border-[#4a90e2] placeholder-[#9ca3af] text-xl text-black"
         />
     </div>
 );

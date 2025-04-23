@@ -75,12 +75,12 @@ const Places = () => {
       {!showForm && !selectedPlace && (
         <div className="flex items-center justify-between">
           <h1 className="text-2xl font-bold text-black">Tourist Places</h1>
-          <Button
+          {/* <Button
             onClick={handleAddPlace}
             className="bg-[#c5a76f] text-white hover:bg-[#b89e65] transition"
           >
             + Add Place
-          </Button>
+          </Button> */}
         </div>
       )}
 
@@ -132,14 +132,14 @@ const Places = () => {
                     <td className="px-4 py-2 text-black">{place.city}</td>
                     <td className="px-4 py-2 text-black">{place.category}</td>
                     <td className="px-4 py-2 flex justify-center gap-2">
-                      <Button
+                      {/* <Button
                         variant="outline"
                         size="sm"
                         className="text-blue-600 border-blue-600 hover:bg-blue-100"
                         onClick={() => handleEditPlace(place)}
                       >
                         Edit
-                      </Button>
+                      </Button> */}
                       <Button
                         variant="outline"
                         size="sm"

@@ -224,7 +224,7 @@ const CitiesTable = () => {
             placeholder="Rechercher une ville..."
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            className="w-full sm:max-w-sm"
+            className="w-full sm:max-w-sm text-black placeholder-black"
           />
 
           <Card className="shadow-lg rounded-lg">

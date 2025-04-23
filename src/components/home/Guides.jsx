@@ -54,8 +54,15 @@
 import { ChevronRight, ChevronLeft } from "lucide-react";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { useTranslation } from 'react-i18next';
+
+
+
 
 export default function TourGuides() {
+
+  
+  const { t } = useTranslation();
   const [guides, setGuides] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -97,11 +104,13 @@ export default function TourGuides() {
   return (
     <div className="max-w-full mx-auto py-10 px-4 mt-24 bg-white">
       <div className="mb-6">
-        <h2 className="text-3xl font-bold text-black">Tour Guides</h2>
-        <p className="text-gray-600 mb-10">
-          Connect with tourists and grow your business by joining our platform as a tour guide.
-        </p>
-      </div>
+      <h2 className="text-3xl font-bold text-black">
+        {t("tourGuides.title")}
+      </h2>
+      <p className="text-gray-600 mb-10">
+        {t("tourGuides.description")}
+      </p>
+    </div>
 
       <div className="relative w-full pl-16">
         <button
@@ -119,7 +128,7 @@ export default function TourGuides() {
               className="relative min-w-[30%] h-96 rounded-lg overflow-hidden shadow-lg transition-transform transform hover:scale-105"
             >
               <img
-                src={guide.photo} 
+                src={`http://localhost:8000${guide.photo}`} 
                 alt={guide.name}
                 className="w-full h-full object-cover rounded-lg"
               />
@@ -129,7 +138,7 @@ export default function TourGuides() {
                
                 </div>
                 <button className="bg-yellow-500 text-gray-900 font-semibold py-2 px-4 rounded-lg shadow-md hover:bg-yellow-600 transition duration-300">
-                  See more
+                  <a href={guide.email}>Contact</a>
                 </button>
               </div>
             </div>

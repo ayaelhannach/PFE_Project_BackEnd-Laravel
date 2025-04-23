@@ -127,7 +127,10 @@ button.reset_password_button{
 }
 
 
-
+button.login_in{
+  background-color: #0f3556 !important; 
+  color: #FFFFFF !important; 
+}
 
 button.login-btn {
   background-color: #FFFFFF !important; 
@@ -185,4 +188,8 @@ button.services_button{
 
 .cv_guide{
   color: black !important;
+}
+
+.custom-black-color {
+  color: black !important; /* Forces the text color to be black */
 }

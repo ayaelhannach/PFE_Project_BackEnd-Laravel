@@ -1,12 +1,11 @@
 import React from "react";
-import {
-  Youtube,
-  Instagram,
-  Facebook,
-  Twitter,
-} from "lucide-react";
+import { useTranslation } from "react-i18next";
+import { Youtube, Instagram, Facebook, Twitter } from "lucide-react";
 
 const Footer = () => {
+  const { t, i18n } = useTranslation();
+  const isRTL = i18n.language === "ar";
+
   return (
     <footer className="bg-[#0d3b66] text-white min-h-[500px] flex flex-col">
       <div className="flex-grow">
@@ -14,12 +13,12 @@ const Footer = () => {
           {/* About */}
           <div>
             <h3 className="text-xl font-semibold italic mb-4 border-b-2 border-white inline-block">
-              About Your Compass
+              {t("footer.about")}
             </h3>
             <p className="text-sm text-gray-300 mt-4">
-              Your Compass is a tourism platform that helps travelers discover Morocco by offering services such as hotel reservations, car rentals, recommended restaurants, and sightseeing tours.
+              {t("footer.about_text")}
             </p>
-            <h4 className="mt-6 mb-2 font-semibold">Contact Our</h4>
+            <h4 className="mt-6 mb-2 font-semibold">{t("footer.contact_us")}</h4>
             <div className="flex space-x-4 mt-2">
               <a href="#"><Youtube className="w-6 h-6 hover:text-yellow-400" /></a>
               <a href="#"><Instagram className="w-6 h-6 hover:text-yellow-400" /></a>
@@ -31,16 +30,16 @@ const Footer = () => {
           {/* Tweets */}
           <div>
             <h3 className="text-xl font-semibold italic mb-4 border-b-2 border-white inline-block">
-              Latest Tweets
+              {t("footer.latest_tweets")}
             </h3>
             <div className="text-sm text-gray-300 space-y-4 mt-4">
               <div>
-                <p>Fellows and they knew it is</p>
+                <p>{t("footer.tweet_one")}</p>
                 <a href="http://CourCompass/" className="text-blue-300 hover:underline">http://CourCompass/</a>
                 <p className="text-yellow-400 mt-1">6 Days ago</p>
               </div>
               <div>
-                <p>Skipper too the millionaire</p>
+                <p>{t("footer.tweet_two")}</p>
                 <a href="http://CourCompass/" className="text-blue-300 hover:underline">http://CourCompass/</a>
                 <p className="text-yellow-400 mt-1">10 Days ago</p>
               </div>
@@ -50,11 +49,10 @@ const Footer = () => {
           {/* Contact */}
           <div>
             <h3 className="text-xl font-semibold italic mb-4 border-b-2 border-white inline-block">
-              Get in Touch
+              {t("footer.get_in_touch")}
             </h3>
             <div className="text-sm text-gray-300 mt-4 space-y-2">
-              <p>(1-8016-7890-1990)</p>
-              <p>(1-8413-7890-1990)</p>
+              <p>{t("footer.phone")}</p>
             </div>
           </div>
         </div>
@@ -62,7 +60,7 @@ const Footer = () => {
 
       {/* Copyright */}
       <div className="text-center text-sm text-gray-300 border-t border-gray-500 py-4">
-        Copyrights © YourCompass 2017. All Rights Reserved
+        {t("footer.copyright")}
       </div>
     </footer>
   );

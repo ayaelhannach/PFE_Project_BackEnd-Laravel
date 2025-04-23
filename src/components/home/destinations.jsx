@@ -99,10 +99,14 @@
 import { ChevronRight, ChevronLeft } from "lucide-react";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { useTranslation } from "react-i18next";
 
 export default function Destinations() {
   const [cities, setCities] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
+
+  const { t, i18n } = useTranslation();
+  const isRTL = i18n.language === "ar";
 
   const itemsPerSlide = 3;
 
@@ -135,10 +139,22 @@ export default function Destinations() {
 
   return (
     <div className="max-w-full mx-auto py-10 px-4">
-      <div className="mb-6">
+      {/* <div className="mb-6">
         <h2 className="text-3xl font-bold text-black">The best destinations for your next vacation</h2>
         <p className="text-gray-600 mb-10">Here's where other travelers are going</p>
-      </div>
+      </div> */}
+
+
+
+    <div className={`mb-6 ${isRTL ? "text-right" : "text-left"}`} dir={isRTL ? "rtl" : "ltr"}>
+      <h2 className="text-3xl font-bold text-black">
+        {t("destinationSection.title")}
+      </h2>
+      <p className="text-gray-600 mb-10">
+        {t("destinationSection.subtitle")}
+      </p>
+    </div>
+
 
       <div className="relative w-full pl-16">
         <button

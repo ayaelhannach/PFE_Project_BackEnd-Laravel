@@ -180,7 +180,7 @@ const EvaluatorsTable = () => {
 
   const fetchEvaluators = async () => {
     try {
-      const response = await axios.get("http://localhost:8000/api/evaluators");
+      const response = await axios.get("http://localhost:8000/evaluators");
       setEvaluators(response.data);
     } catch (error) {
       console.error("Erreur lors de la récupération des évaluateurs :", error);

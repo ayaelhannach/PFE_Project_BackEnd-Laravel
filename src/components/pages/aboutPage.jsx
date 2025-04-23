@@ -5,6 +5,7 @@ import Footer from "../home/footer";
 import ExperienceGrid from "../about/categories";
 
 
+
 function AboutPage() {
     return (
         <div className="w-full min-h-screen">
