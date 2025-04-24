@@ -75,15 +75,15 @@ public function store(Request $request)
     $submission->city_id = $request->city_id;
 
     // Gestion de l'image
-    if ($request->hasFile('image')) {
-        $imageName = $request->file('image')->getClientOriginalName();
-        $imagePath = public_path('/images/services/');
-        $request->file('image')->move($imagePath, $imageName);
-        $submission->image = '/images/services/' . $imageName;
-    } else {
-        // You can either skip saving the image or provide a default value
-        $submission->image = null;  // Set to null if no image is uploaded
-    }
+    // if ($request->hasFile('image')) {
+    //     $imageName = $request->file('image')->getClientOriginalName();
+    //     $imagePath = public_path('/images/services/');
+    //     $request->file('image')->move($imagePath, $imageName);
+    //     $submission->image = '/images/services/' . $imageName;
+    // } else {
+    //     // You can either skip saving the image or provide a default value
+    //     $submission->image = null;  // Set to null if no image is uploaded
+    // }
     
     // Enregistrer la soumission dans la base de données
     $submission->status = 'pending';

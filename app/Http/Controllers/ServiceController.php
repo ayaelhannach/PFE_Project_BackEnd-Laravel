@@ -156,6 +156,7 @@ public function store(Request $request)
     $service->phone_number = $request->phone_number;
     $service->city_id = $request->city_id;
     $service->category_id = $categoryId; 
+    $service->submission_id = 1;
 
     // Gestion de l'image
     if ($request->hasFile('image')) {
@@ -205,47 +206,75 @@ public function store(Request $request)
     /**
      * Met à jour un service.
      */
-    public function update(Request $request, $id)
+//     public function update(Request $request, $id)
+// {
+//     $service = Service::findOrFail($id);
+
+//     // Préparez les données de mise à jour
+//     $updatedData = $request->only([
+//         'name',
+//         'description',
+//         'address',
+//         'email',
+//         'phone_number',
+//         'website',
+//         'city_id',
+//         'category_id'
+//     ]);
+
+//     // Image upload (si une nouvelle image est envoyée)
+//     if ($request->hasFile('image')) {
+//         // Supprimer l'ancienne image si elle existe
+//         if ($service->image && file_exists(public_path('images/services/' . $service->image))) {
+//             unlink(public_path('images/services/' . $service->image));
+//         }
+
+//         // Télécharger la nouvelle image
+//         $file = $request->file('image');
+//         $filename = time() . '_' . $file->getClientOriginalName();
+//         $file->move(public_path('images/services'), $filename);
+
+//         // Ajouter le chemin de la nouvelle image aux données mises à jour
+//         $updatedData['image'] = 'services/' . $filename;
+//     }
+
+//     // Log pour débogage
+//     Log::debug('Service updated data:', $updatedData);
+
+//     // Mettre à jour les données du service
+//     $service->update($updatedData);
+
+//     // Retourner une réponse avec le message de succès et les données du service
+//     return response()->json(['message' => 'Service mis à jour avec succès', 'service' => $service]);
+// }
+
+
+
+public function update(Request $request, $id)
 {
     $service = Service::findOrFail($id);
 
-    // Préparez les données de mise à jour
-    $updatedData = $request->only([
-        'name',
-        'description',
-        'address',
-        'email',
-        'phone_number',
-        'website',
-        'city_id',
-        'category_id'
-    ]);
+    
+    $service->name = $request->input('name', $service->name);
+    $service->description = $request->input('description', $service->description);
+    $service->address = $request->input('address', $service->address);
+    $service->email = $request->input('email', $service->email);
+    $service->phone_number = $request->input('phone_number', $service->phone_number);
+    $service->website = $request->input('website', $service->website);
+    $service->city_id = $request->input('city_id', $service->city_id);
+    $service->category_id = $request->input('category_id', $service->category_id);
 
-    // Image upload (si une nouvelle image est envoyée)
+    
     if ($request->hasFile('image')) {
-        // Supprimer l'ancienne image si elle existe
-        if ($service->image && file_exists(public_path('images/services/' . $service->image))) {
-            unlink(public_path('images/services/' . $service->image));
-        }
-
-        // Télécharger la nouvelle image
-        $file = $request->file('image');
-        $filename = time() . '_' . $file->getClientOriginalName();
-        $file->move(public_path('images/services'), $filename);
-
-        // Ajouter le chemin de la nouvelle image aux données mises à jour
-        $updatedData['image'] = 'services/' . $filename;
+        $path = $request->file('image')->store('services', 'public');
+        $service->image = $path;
     }
 
-    // Log pour débogage
-    Log::debug('Service updated data:', $updatedData);
+    $service->save();
 
-    // Mettre à jour les données du service
-    $service->update($updatedData);
-
-    // Retourner une réponse avec le message de succès et les données du service
-    return response()->json(['message' => 'Service mis à jour avec succès', 'service' => $service]);
+    return response()->json(['message' => 'Service mis à jour avec succès']);
 }
+
 
     /**
      * Supprime un service.
@@ -255,7 +284,7 @@ public function store(Request $request)
         $service = Service::findOrFail($id);
         $service->delete();
 
-        // return redirect()->route('services.index')->with('success', 'Service supprimé avec succès.');
+       
         return response()->json(['message' => 'Deleted']);
     }
 }

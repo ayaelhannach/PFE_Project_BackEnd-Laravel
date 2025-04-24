@@ -36,7 +36,7 @@ class CityController extends Controller
      */
     public function store(Request $request)
 {
-    // Validation des données
+    
     $request->validate([
         'name' => 'required|string|max:255',
         'description' => 'required|string',
@@ -44,26 +44,23 @@ class CityController extends Controller
         'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
     ]);
 
-    // Traitement de l'image si elle existe
    
     if ($request->hasFile('image')) {
-        // Récupérer le nom du fichier de l'image
         $imageName = $request->file('image')->getClientOriginalName();
         
-        // Stocker l'image dans public/images/cities et obtenir le chemin relatif sans 'public/'
+        
         $imagePath = $request->file('image')->storeAs('/images/cities', $imageName, 'public');
     } else {
         $imagePath = null;
     }
 
-    // Création de la ville (par exemple, si tu as un modèle City)
+    
     $city = new City();
     $city->name = $request->name;
     $city->description = $request->description;
     $city->location = $request->location;
     
-    // Enregistrer seulement le chemin relatif dans la base de données
-    $city->image = '/images/cities/' . $imageName; // Storing relative path (without 'public/')
+    $city->image = '/images/cities/' . $imageName; 
     $city->save();
 
     return response()->json([
@@ -78,7 +75,6 @@ class CityController extends Controller
      */
     public function show($id)
 {
-    // Recherche la ville par son ID
     $city = City::findOrFail($id);
 
     return response()->json($city);
@@ -99,30 +95,29 @@ class CityController extends Controller
      */
     public function update(Request $request, $id)
 {
-    // Trouver la ville par ID
+    
     $city = City::findOrFail($id);
 
-    // Validation des données
+    
     $request->validate([
         'name' => 'required|string|max:255',
         'description' => 'required|string',
         'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
     ]);
 
-    // Mise à jour des champs
+   
     $city->name = $request->name;
     $city->description = $request->description;
 
-    // Si une nouvelle image est envoyée
+  
     if ($request->hasFile('image')) {
         $imagePath = $request->file('image')->store('images', 'public');
         $city->image = $imagePath;
     }
 
-    // Sauvegarder la ville mise à jour
+  
     $city->save();
 
-    // Retourner la ville mise à jour
     return response()->json($city);
 }
 

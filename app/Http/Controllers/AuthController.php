@@ -17,7 +17,7 @@ class AuthController extends Controller
             'name' => 'required|string|min:3',
             'email' => 'required|string|email|unique:users',
             'password' => 'required|string|min:4',
-            //'role' => 'required|string|in:admin,user,business '
+           
         ]);
 
         $user = new User();
@@ -33,8 +33,7 @@ class AuthController extends Controller
         
         $token= Auth::login($user);
          
-        //$roleController = new RoleController();
-        //$roleController->assignRole($user);
+       
         return response()->json([
             'message' => 'registered Succesfully',
             'user' => $user,

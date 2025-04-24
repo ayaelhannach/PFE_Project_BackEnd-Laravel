@@ -9,7 +9,7 @@ class FavoriteController extends Controller
 {
     public function index($utilisateur_id)
     {
-        $favorites = Favorite::with('service') // Charge la relation service
+        $favorites = Favorite::with('service') 
             ->where('utilisateur_id', $utilisateur_id)
             ->get();
 

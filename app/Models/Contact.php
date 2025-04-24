@@ -9,6 +9,5 @@ class Contact extends Model
 {
     use HasFactory;
 
-    // Définir les champs que vous pouvez remplir
     protected $fillable = ['nom', 'email', 'message', 'telephone'];
 }

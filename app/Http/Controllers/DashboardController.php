@@ -11,30 +11,28 @@ class DashboardController extends Controller
 {
     public function index()
 {
-    // Statistiques globales
+    
     $stats = [
         'business_submissions' => Service_Submission::count(),
-        'website_visitors' => 420000, // Exemple de données statiques
+        'website_visitors' => 420000, 
         'users' => User::count(),
     ];
 
-    // Utilisateurs
+    
     $users = User::select('id', 'name', 'username', 'email', 'role')->get();
 
-    // Dernières soumissions
     $submissions = Service_Submission::with('user', 'city', 'category')
         ->orderBy('created_at', 'desc')
         ->take(5)
         ->get();
 
-    // ✅ Soumissions par jour (7 derniers jours)
     $dailySubmissions = Service_Submission::selectRaw('DATE(created_at) as date, COUNT(*) as count')
-        ->where('created_at', '>=', now()->subDays(7)) // Tu peux augmenter à 30 jours si tu veux plus long
+        ->where('created_at', '>=', now()->subDays(7)) 
         ->groupBy('date')
         ->orderBy('date')
         ->get();
 
-    // Services tendances
+   
     $trending = Service::with('submission', 'city', 'category')
         ->orderBy('created_at', 'desc')
         ->take(5)
@@ -45,7 +43,7 @@ class DashboardController extends Controller
         'users' => $users,
         'submissions' => $submissions,
         'trending' => $trending,
-        'dailySubmissions' => $dailySubmissions, // ⚠️ nouveau champ
+        'dailySubmissions' => $dailySubmissions, 
     ]);
 }
 
