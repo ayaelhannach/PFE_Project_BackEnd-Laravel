@@ -85,7 +85,7 @@ const DetailPlace = () => {
       </div>
 
       <div className="flex flex-col lg:flex-row w-full lg:w-4/5 gap-6">
-        {/* Section Commentaires */}
+      
         <div className="flex-1 bg-gray-100 p-4 rounded-lg">
           <h3 className="text-xl font-semibold mb-4">What People are Saying</h3>
           <ul className="space-y-4">
@@ -108,7 +108,7 @@ const DetailPlace = () => {
           </ul>
         </div>
 
-        {/* Section Image */}
+       
         <div className="flex-1 text-center">
           <img
             src={lieu.image}

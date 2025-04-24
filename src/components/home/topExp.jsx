@@ -5,7 +5,7 @@ import { Heart, ChevronRight, ChevronLeft } from "lucide-react";
 const ExperienceSection = () => {
   const scrollRef = useRef(null);
   const [experiences, setExperiences] = useState([]);
-  const [userId] = useState(1); // Remplacer par auth réelle
+  const [userId] = useState(1); 
 
   useEffect(() => {
     axios.get("http://localhost:8000/services")

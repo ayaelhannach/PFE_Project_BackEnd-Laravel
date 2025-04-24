@@ -5,7 +5,6 @@ import hotel1 from "../assets/h1.jpeg";
 import hotel2 from "../assets/h2.jpeg";
 import hotel3 from "../assets/h3.jpeg";
 import hotel4 from "../assets/h4.jpeg";
-//hadi dyal hotel
 
 const slides = [
   {

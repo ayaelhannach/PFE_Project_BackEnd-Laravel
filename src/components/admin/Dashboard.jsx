@@ -17,7 +17,6 @@ import {
   ArcElement,
 } from "chart.js";
 
-// Enregistrement des composants de chart.js
 ChartJS.register(
   CategoryScale,
   LinearScale,
@@ -79,7 +78,7 @@ const Dashboard = () => {
   const prepareBarChartData = () => {
     const counts = submissions.reduce((acc, curr) => {
       const date = new Date(curr.created_at);
-      const month = date.getMonth(); // 0 = Janvier
+      const month = date.getMonth();
       acc[month] = (acc[month] || 0) + 1;
       return acc;
     }, {});
@@ -149,9 +148,9 @@ const Dashboard = () => {
         ))}
       </div>
 
-      {/* ✅ Graphiques en Ligne, Barres et Secteurs (Réduits) */}
+     
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-        {/* ✅ Submissions par Jour */}
+       
         <Card className="shadow-lg rounded-lg hover:shadow-xl transition-all">
           <CardContent className="p-4">
             <h3 className="text-lg font-semibold text-center mb-2">
@@ -176,7 +175,7 @@ const Dashboard = () => {
           </CardContent>
         </Card>
 
-        {/* ✅ Graphique Barres */}
+
         <Card className="shadow-lg rounded-lg hover:shadow-xl transition-all">
           <CardContent className="p-4">
             <h3 className="text-lg font-semibold text-center mb-2">
@@ -198,7 +197,7 @@ const Dashboard = () => {
           </CardContent>
         </Card>
 
-        {/* ✅ Graphique Secteurs */}
+       
         <Card className="shadow-lg rounded-lg hover:shadow-xl transition-all">
           <CardContent className="p-4">
             <h3 className="text-lg font-semibold text-center mb-2">

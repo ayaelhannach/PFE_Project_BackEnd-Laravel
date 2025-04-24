@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-// Import images
 import headerImage from '../assets/header-image.jpg';
 import laVueImage from '../assets/la-vue.jpg';
 import cappuccinoImage from '../assets/cappuccino.jpg';

@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import NavbarSecondary from './NavbarSecondary';
-// Importation des images
 import headerImage from '../assets/header-image.jpg';
 import capSpartelImage from '../assets/cap-spartel.jpg';
 import rmilatImage from '../assets/rmilat.jpg';
@@ -87,7 +86,7 @@ const SeeMore1 = () => {
   </div>
 </div>
 
-{/* Rmilat Section */}
+
 <div className="your-component flex items-center bg-white p-8 mt-8 shadow-lg rounded-lg hover:shadow-2xl transition-shadow duration-300">
   <div className="image-section flex justify-center items-center pr-5 w-full md:w-1/3">
     <img
@@ -111,7 +110,7 @@ const SeeMore1 = () => {
   </div>
 </div>
 
-{/* Grotte d'Hercule Section */}
+
 <div className="your-component flex items-center bg-white p-8 mt-8 shadow-lg rounded-lg hover:shadow-2xl transition-shadow duration-300">
   <div className="image-section flex justify-center items-center pr-5 w-full md:w-1/3">
     <img
@@ -135,7 +134,7 @@ const SeeMore1 = () => {
   </div>
 </div>
 
-{/* Kasbah Section */}
+
 <div className="your-component flex items-center bg-white p-8 mt-8 shadow-lg rounded-lg hover:shadow-2xl transition-shadow duration-300">
   <div className="image-section flex justify-center items-center pr-5 w-full md:w-1/3">
     <img
@@ -159,7 +158,7 @@ const SeeMore1 = () => {
   </div>
 </div>
 
-{/* Malabata Section */}
+
 <div className="your-component flex items-center bg-white p-8 mt-8 shadow-lg rounded-lg hover:shadow-2xl transition-shadow duration-300">
   <div className="image-section flex justify-center items-center pr-5 w-full md:w-1/3">
     <img

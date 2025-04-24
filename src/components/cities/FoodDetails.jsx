@@ -1,7 +1,7 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 
-// Importation des images
+
 import laVueImage from '../assets/LaVue.jpg';
 import cappuchinoImage from '../assets/Cappuchino.jpg';
 import rrIceImage from '../assets/RR-ICE.jpg';

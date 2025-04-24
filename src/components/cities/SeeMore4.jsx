@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 
-// Import images directly at the top
 import headerImage from '../assets/header-image.jpg';
 import smallImage1 from '../assets/small-image1.jpg';
 import smallImage2 from '../assets/small-image2.jpg';
@@ -62,7 +61,6 @@ const SeeMore4 = () => {
   );
 };
 
-// Use the imported images in the array
 const smallImages = [
   smallImage1,
   smallImage2,

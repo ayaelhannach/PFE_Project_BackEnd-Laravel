@@ -6,7 +6,7 @@ const NavbarSecondary = () => {
   return (
     <nav className="bg-white py-3 px-6 shadow-sm sticky top-0 z-50 mt-[80px]"> {/* Marge de 80px */}
       <div className="flex justify-center items-center space-x-12">
-        {/* Tangier Location */}
+       
         <div className="flex items-center group">
           <FaMapMarkerAlt className="text-gray-700 mr-2 group-hover:text-amber-600 transition-colors" />
           <span className="font-medium text-gray-800 group-hover:text-amber-600 transition-colors">
@@ -14,7 +14,7 @@ const NavbarSecondary = () => {
           </span>
         </div>
 
-        {/* Navigation Links */}
+      
         <div className="flex items-center space-x-8">
           <Link 
             to="/hotels"

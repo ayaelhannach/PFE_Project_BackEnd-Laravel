@@ -8,9 +8,9 @@ import Carousel from "./headerContact";
 
 const ContactPage = () => {
   const contactInfo = {
-    phone: "+212 05 22 38 67 89", // Morocco phone number
-    email: "morocco@mosaicfactory.com", // Morocco email address
-    showroomAddress: "123 Rue Mohammed V, Casablanca, Maroc", // Address in Morocco
+    phone: "+212 05 22 38 67 89", 
+    email: "morocco@mosaicfactory.com", 
+    showroomAddress: "123 Rue Mohammed V, Casablanca, Maroc", 
     hours: {
       weekdays: "Lundi à Vendredi 9h/18h",
       saturday: "Samedi 10h/18h",
@@ -23,14 +23,14 @@ const ContactPage = () => {
       instagram: "https://instagram.com",
       youtube: "https://youtube.com",
     },
-    showroomLocation: [33.5731, -7.5898], // Coordinates for Casablanca, Morocco
+    showroomLocation: [33.5731, -7.5898], 
   };
 
   return (
     <div className="bg-gray-50 min-h-screen">
       <Navbar />
       <Carousel />
-      {/* Main container for map and contact info */}
+     
       <div className="w-full px-4 bg-white p-8 mt-10 mb-10 rounded-lg shadow-xl flex flex-col lg:flex-row gap-10 lg:gap-16 max-w-full mx-auto animate-fade-in">
         {/* Map on the left */}
         <div className="lg:w-1/2 w-full">
@@ -52,7 +52,6 @@ const ContactPage = () => {
           </MapContainer>
         </div>
 
-        {/* Contact Info on the right */}
         <div className="lg:w-1/2 w-full">
           <h3 className="text-2xl font-semibold text-[#0F3556] mb-4">Nos Coordonnées</h3>
           <p className="text-lg text-[#0F3556] mb-2">
@@ -80,7 +79,6 @@ const ContactPage = () => {
           </p>
           <p className="text-lg text-[#0F3556] mb-6">🕒 {contactInfo.showroomHours}</p>
 
-          {/* Find in Maps Link */}
           <div>
             <a
               href={`https://www.google.com/maps?q=${contactInfo.showroomLocation[0]},${contactInfo.showroomLocation[1]}`}
@@ -93,7 +91,7 @@ const ContactPage = () => {
 
           </div>
 
-          {/* Social Media Links */}
+        
           <div className="flex justify-start gap-6 mt-8">
             {Object.entries(contactInfo.socialLinks).map(([key, value]) => (
               <a

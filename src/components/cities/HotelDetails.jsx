@@ -1,7 +1,7 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 
-// Importation des images
+
 import leMirageImage from '../assets/le-mirage.jpg';
 import hiltonImage from '../assets/hilton.jpg';
 import nordPinusImage from '../assets/nord-pinus.jpg';

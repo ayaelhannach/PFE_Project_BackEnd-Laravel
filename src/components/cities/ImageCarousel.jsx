@@ -160,7 +160,7 @@ const ImageCarousel = () => {
   const handlePrev = () => {
     setStartIndex((prev) => (prev - imagesToShow + guides.length) % guides.length);
   };
-   // apres ajouter route dans web.php => 1 ere etape
+
   useEffect(() => {
     axios.get("http://localhost:8000/guides")
       .then(response => {
@@ -170,7 +170,7 @@ const ImageCarousel = () => {
         console.error("Erreur lors du chargement des guides :", error);
       });
   }, []);
-//////// 
+
 
 // 2
   const displayedGuides = guides.slice(startIndex, startIndex + imagesToShow);

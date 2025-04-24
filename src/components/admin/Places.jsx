@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import AddPlace from "./AddPlace";
+import AddPlace from "./addPlace";
 import EditPlace from "./EditPlace";
 
 const Places = () => {
@@ -11,7 +11,7 @@ const Places = () => {
   const [places, setPlaces] = useState([]);
   const [selectedPlace, setSelectedPlace] = useState(null);
 
-  // Charger les données des places
+  
   useEffect(() => {
     axios.get("http://localhost:8000/places")
       .then((response) => {
@@ -33,7 +33,7 @@ const Places = () => {
       });
   }, []);
 
-  // Filtrer selon le texte
+  
   const filteredPlaces = places.filter((place) =>
     place.name.toLowerCase().includes(searchText.toLowerCase())
   );

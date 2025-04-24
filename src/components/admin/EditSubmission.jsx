@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios"; // Assurez-vous d'importer axios
+import axios from "axios"; 
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 
@@ -17,7 +17,6 @@ const EditSubmission = ({ submission, onCancel, onUpdate }) => {
     status: submission?.status || "Pending",
   });
 
-  // Mise à jour des données lorsque 'submission' change
   useEffect(() => {
     if (submission) {
       setFormData({
@@ -48,16 +47,16 @@ const EditSubmission = ({ submission, onCancel, onUpdate }) => {
 
     try {
       const response = await axios.put(
-        `http://localhost:8000/submissions/${submission.id}`, // Remplace cette URL par ton endpoint Laravel
+        `http://localhost:8000/submissions/${submission.id}`, 
         formData
       );
 
-      // Vérifie la réponse dans la console pour le débogage
+     
       console.log("Réponse de l'API:", response);
 
       if (response.status === 200) {
-        // Mise à jour réussie, appelle la fonction onUpdate
-        onUpdate(response.data); // Assurez-vous que la réponse contient les données mises à jour
+       
+        onUpdate(response.data); 
       } else {
         alert("Erreur lors de la mise à jour, veuillez réessayer.");
       }
@@ -66,7 +65,7 @@ const EditSubmission = ({ submission, onCancel, onUpdate }) => {
       console.error("Erreur lors de la mise à jour de la soumission:", error);
 
       if (error.response) {
-        // Afficher les erreurs du serveur si elles existent
+        
         alert(`Erreur lors de la mise à jour: ${error.response.data.message || error.response.data}`);
       } else {
         alert("Erreur inconnue, veuillez réessayer.");

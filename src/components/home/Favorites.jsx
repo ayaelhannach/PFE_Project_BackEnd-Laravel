@@ -4,7 +4,7 @@ import Navbar from "./menu";
 
 const Favorites = () => {
   const [favorites, setFavorites] = useState([]);
-  const [userId] = useState(1); // à remplacer par l'ID dynamique de l'utilisateur connecté
+  const [userId] = useState(1); 
 
   useEffect(() => {
     fetchFavorites();
@@ -22,7 +22,7 @@ const Favorites = () => {
   const handleDelete = async (id) => {
     try {
       await axios.delete(`http://localhost:8000/api/favorites/${id}`);
-      fetchFavorites(); // Recharge la liste après suppression
+      fetchFavorites(); 
     } catch (error) {
       console.error("Erreur lors de la suppression", error);
     }

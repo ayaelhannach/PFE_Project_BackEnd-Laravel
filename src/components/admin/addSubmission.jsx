@@ -16,7 +16,7 @@ export default function AddSubmission() {
     owner: "",
     website: "",
     status: "Pending",
-    date: new Date().toISOString().split("T")[0], // format YYYY-MM-DD
+    date: new Date().toISOString().split("T")[0], 
   });
 
   const [showTable, setShowTable] = useState(false);
@@ -32,7 +32,6 @@ export default function AddSubmission() {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("Soumission ajoutée:", formData);
-    // Ici tu peux ajouter un appel à une API ou autre logique
     setFormData({
       name: "",
       description: "",
@@ -108,7 +107,6 @@ export default function AddSubmission() {
   );
 }
 
-// Un petit composant pour factoriser les champs
 const InputField = ({ label, name, value, onChange, type = "text" }) => (
   <div className="flex flex-col">
     <label htmlFor={name} className="text-lg font-medium text-[#4a5568]">{label}</label>

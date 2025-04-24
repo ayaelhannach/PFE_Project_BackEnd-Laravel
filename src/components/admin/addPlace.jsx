@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
-import Places from "./Places"; // Assuming your Places component is correctly imported
+import Places from "./Places"; 
 
 const AddPlace = () => {
   const [formData, setFormData] = useState({
@@ -24,13 +24,13 @@ const AddPlace = () => {
     }));
   };
 
-  // Handle file input separately
+ 
   const handleFileChange = (e) => {
-    const file = e.target.files[0]; // Get the first file
+    const file = e.target.files[0]; 
     if (file) {
       setFormData((prev) => ({
         ...prev,
-        photo: URL.createObjectURL(file), // Create a URL for the file
+        photo: URL.createObjectURL(file), 
       }));
     }
   };
@@ -38,7 +38,7 @@ const AddPlace = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("New place added:", formData);
-    // Here you can send the new place to your backend or add it to the state
+    
 
     setFormData({
       name: "",
@@ -48,11 +48,11 @@ const AddPlace = () => {
       localisation: "",
       category: "",
     });
-    setShowTable(true); // Show the places table after submitting
+    setShowTable(true); 
   };
 
   const handleCancel = () => {
-    setShowTable(true); // Show the places table without submitting
+    setShowTable(true); 
   };
 
   if (showTable) {

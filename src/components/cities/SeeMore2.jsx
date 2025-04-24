@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 
-// Import images
+
 import leMirageImage from '../assets/le-mirage.jpg';
 import hiltonImage from '../assets/hilton.jpg';
 import nordPinusImage from '../assets/nord-pinus.jpg';
 import mnarCastleImage from '../assets/mnar-castle.jpg';
 import royalTulipImage from '../assets/royal-tulip.jpg';
 
-// PlaceCard component
+
 const PlaceCard = ({ image, title, reviews, rank, description }) => (
   <div className="flex items-center p-5 bg-gray-100 mt-5">
     <div className="flex-1 flex justify-center items-center pr-5">

@@ -1,7 +1,7 @@
 import React from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 
-// Importation des images
+
 import yoursImage from '../assets/yours.jpg';
 import caliRentalImage from '../assets/CaliRental.jpg';
 import kefaloniaImage from '../assets/Kefalonia.jpg';
@@ -47,7 +47,7 @@ const rentalCars = [
 
 const DetailsRental = () => {
   const { nom } = useParams();
-  const navigate = useNavigate(); // Fonction de navigation
+  const navigate = useNavigate(); 
   const car = rentalCars.find(
     (c) => c.nom.replace(/\s+/g, '-').toLowerCase() === nom
   );
@@ -68,7 +68,7 @@ const DetailsRental = () => {
         </h1>
 
         <div className="flex flex-col md:flex-row gap-8 items-start shadow-md hover:shadow-xl transition-all duration-300">
-          {/* Image */}
+         
           <img
             src={car.image}
             alt={car.nom}
@@ -107,14 +107,14 @@ const DetailsRental = () => {
           </div>
         </div>
 
-        {/* Button de réservation */}
+       
         <div className="mt-8 text-center">
           <button className="bg-[#0F3556] text-white text-lg font-semibold py-3 px-6 rounded-md transform transition-all hover:bg-[#0C2D3E] hover:scale-105 hover:shadow-xl">
             Réserver maintenant
           </button>
         </div>
 
-        {/* Bouton Retour */}
+        
       </div>
       <div className="mt-8 text-center">
         <button

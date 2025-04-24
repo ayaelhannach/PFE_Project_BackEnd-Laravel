@@ -38,13 +38,13 @@ const EditPlace = ({ place, setShowForm, onSave, setEditingPlace }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     onSave(formData);
-    setShowForm(false); // Close the form
-    setEditingPlace(null); // Set editingPlace back to null to show the list
+    setShowForm(false); 
+    setEditingPlace(null); 
   };
 
   const handleCancel = () => {
-    setShowForm(false); // Close the form
-    setEditingPlace(null); // Set editingPlace back to null to show the list
+    setShowForm(false); 
+    setEditingPlace(null); 
   };
 
   return (

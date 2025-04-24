@@ -10,7 +10,7 @@ const slides = [
 ];
 
 const Carousel = () => {
-  const [currentIndex] = useState(0); // Always show the first image
+  const [currentIndex] = useState(0); 
 
   return (
     <div
@@ -26,7 +26,7 @@ const Carousel = () => {
         <p className="mt-2 text-lg transition-all duration-700">
           {slides[currentIndex].description}
         </p>
-        {/* No navigation buttons as you're displaying a single image */}
+       
         <div className="absolute bottom-4 flex items-center justify-center w-full space-x-2">
           {slides.map((_, index) => (
             <div
