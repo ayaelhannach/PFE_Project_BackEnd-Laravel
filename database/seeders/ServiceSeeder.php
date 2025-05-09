@@ -167,11 +167,6 @@ class ServiceSeeder extends Seeder
         ]);
 
 
-        
-
-        
-
-
         DB::table('services')->insert([
         'name' => 'Place Jemaa el-Fna',
         'slug' => 'jemaa-el-fna',

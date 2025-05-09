@@ -2,7 +2,7 @@
 namespace Database\Factories;
 
 use App\Models\Service_Submission;
-use App\Models\Utilisateur;
+use App\Models\User;
 use App\Models\Service;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
@@ -16,7 +16,7 @@ class Service_SubmissionFactory extends Factory
             'description' => $this->faker->paragraph(),
             'date' => $this->faker->date(),
             'status' => $this->faker->randomElement(['pending', 'approved', 'rejected']),
-            'utilisateur_id' => Utilisateur::factory(),
+            'utilisateur_id' => User::factory(),
             'service_id' => Service::factory(),
         ];
     }
