@@ -6,23 +6,23 @@ import { useTranslation } from "react-i18next"; // Importer useTranslation
 const slides = [
   {
     image: "images/pict.png",
-    titleKey: "welcomeToMorocco", // Utiliser la clé de traduction
+    titleKey: "welcome To Morocco", // Utiliser la clé de traduction
     descriptionKey: "yourCompass", // Utiliser la clé de traduction
   },
   {
     image: "images/chefch.png",
-    titleKey: "welcomeToChefchaouen", // Utiliser la clé de traduction
-    descriptionKey: "experienceChefchaouen", // Utiliser la clé de traduction
+    titleKey: "welcome To Chefchaouen", // Utiliser la clé de traduction
+    descriptionKey: "experience Chefchaouen", // Utiliser la clé de traduction
   },
   {
     image: "images/merr.png",
-    titleKey: "welcomeToMarrakech", // Utiliser la clé de traduction
-    descriptionKey: "discoverMarrakech", // Utiliser la clé de traduction
+    titleKey: "welcome To Marrakech", // Utiliser la clé de traduction
+    descriptionKey: "discover Marrakech", // Utiliser la clé de traduction
   },
   {
     image: "images/pict2.jpg",
-    titleKey: "welcomeToTangier", // Utiliser la clé de traduction
-    descriptionKey: "exploreTangier", // Utiliser la clé de traduction
+    titleKey: "welcome To Tangier", // Utiliser la clé de traduction
+    descriptionKey: "explore Tangier", // Utiliser la clé de traduction
   },
 ];
 

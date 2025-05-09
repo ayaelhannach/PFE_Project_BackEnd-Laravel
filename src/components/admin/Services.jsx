@@ -139,8 +139,8 @@ export default function Services() {
                     </td>
                     <td className="px-4 py-2 text-black">{service.name}</td>
                     
-                    <td className="px-4 py-2 text-blue-700 underline">
-                      <a href={service.website} target="_blank" rel="noreferrer">
+                    <td className="px-4 py-2 text-black underline">
+                      <a href={service.website} target="_blank" rel="noreferrer" >
                         {service.website}
                       </a>
                     </td>

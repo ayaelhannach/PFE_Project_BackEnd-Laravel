@@ -33,7 +33,7 @@ const ExperienceSection = () => {
 
   return (
     <div className="px-6 py-12 max-w-screen-xl mx-auto">
-      <h2 className="text-4xl font-bold mb-4">Top Experiences</h2>
+      <h2 className="text-4xl font-bold mb-4 text-black">Top Experiences</h2>
       <p className="text-gray-600 mb-8">Experience the best of Morocco</p>
 
       <div className="relative flex items-center">

@@ -10,7 +10,7 @@ const Features = () => {
   const features = [
     {
       icon: <Hotel size={50} className="text-yellow-600" />,
-      title: t("features.list.hotels.title"),
+      title: t("features.list.hotels.title") ,
       description: t("features.list.hotels.description"),
     },
     {

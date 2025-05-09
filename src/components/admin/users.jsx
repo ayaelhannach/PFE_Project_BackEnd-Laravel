@@ -117,10 +117,10 @@ const EvaluatorsTable = () => {
                         <td className="px-4 py-2 text-black">{evaluator.birth_date}</td>
                         <td className="px-4 py-2 text-black flex gap-3">
                           <button onClick={() => handleEdit(evaluator)} title="Edit">
-                            <FaEdit className="text-[#0f3556]" />
+                            <FaEdit className="text-white" />
                           </button>
                           <button onClick={() => handleDelete(evaluator.id)} title="Delete">
-                            <FaTrashAlt className="text-red-600" />
+                            <FaTrashAlt className="text-white" />
                           </button>
                         </td>
                       </tr>
